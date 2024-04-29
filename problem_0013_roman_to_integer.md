@@ -111,7 +111,7 @@ public:
             switch(s[i]) {
                 case 'I':
                     // Trước I là V và X thì sẽ -1, còn không thì +1
-                    if (s[i + 1] == 'V'  s[i + 1] == 'X') {
+                    if (s[i + 1] == 'V' || s[i + 1] == 'X') {
                         sum -= 1;
                         break;
                     }
@@ -120,7 +120,7 @@ public:
                     break;
                 // Trước X là L và C thì sẽ -10, còn không thì +10
                 case 'X':
-                    if (s[i + 1] == 'L'  s[i + 1] == 'C') {
+                    if (s[i + 1] == 'L' || s[i + 1] == 'C') {
                         sum -= 10;
                         break;
                     }
@@ -129,7 +129,7 @@ public:
                     break;
                 // Trước C là D và M thì sẽ -100, còn không thì +100
                 case 'C':
-                    if (s[i + 1] == 'D'  s[i + 1] == 'M') {
+                    if (s[i + 1] == 'D' || s[i + 1] == 'M') {
                         sum -= 100;
                         break;
                     }
