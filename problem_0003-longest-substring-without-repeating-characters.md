@@ -36,7 +36,7 @@ s consists of English letters, digits, symbols and spaces.
 
 ## <span style="color: #10b981">Solution:</span>
 
-### <span style="color: #ea580c">* Approach 1: Use map and 2 pointers</span>
+### <span style="color: #ea580c">* Approach 1: Sliding window</span>
 #### Pseudo code:
 ```cpp
 s = "" => return 0
@@ -86,14 +86,43 @@ public:
 };
 ```
 
-### <span style="color: #ea580c">* Approach 2: ...</span>
+### <span style="color: #ea580c">* Approach 2: Kiểm tra trùng lặp bằng map và find</span>
 #### Pseudo code:
 ```cpp
+unordered_map<char, int> mp
+start = 0
+maxLen = 0
+
+for (i := 0) -> s.size():
+    if ((not find s[i] in mp) and (mp[s[i]] >= start)):
+        start = mp[s[i]] + 1
+    mp[s[i]] = i
+    maxLen = max(maxLen, distance between i and start)
+
+return maxLen
 
 ```
 #### Code:
 ```cpp
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        unordered_map<char, int> mp;
+        int start = 0, maxLen = 0;
 
+        for (int i = 0; i < s.size(); i++) {
+            // Tìm nếu có s[i] trong map thì index của nó phải lớn hơn vị trí bắt đầu chuỗi substr đang xét
+            if (mp.find(s[i]) != mp.end() && mp[s[i]] >= start) {
+                start = mp[s[i]] + 1;   // Bắt đầu từ vị trí của char bị lặp + 1
+            }
+
+            mp[s[i]] = i;   // Thay index vào giá trị của key char trong map để lưu giữ index có giá trị đó gần nhất với substr đang xét
+            maxLen = max(maxLen, i - start + 1);
+        }
+
+        return maxLen;
+    }
+};
 ```
 
 ### <span style="color: #ea580c">* Approach 3: ...</span>
