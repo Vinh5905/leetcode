@@ -10,7 +10,7 @@ The word can be constructed from letters of sequentially adjacent cells, where a
  
 
 **Example 1:**
-![image](/picture/word-search-1.jpeg)
+![image](/c++/picture/word-search-1.jpeg)
 ```cpp
 Input: 
     board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
@@ -19,7 +19,7 @@ Output: true
 ```
 
 **Example 2:**
-![image](/picture/word-search-2.jpeg)
+![image](/c++/picture/word-search-2.jpeg)
 ```cpp
 Input: 
     board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
@@ -28,7 +28,7 @@ Output: true
 ```
 
 **Example 3:**
-![image](/picture/word-search-3.jpeg)
+![image](/c++/picture/word-search-3.jpeg)
 ```cpp
 Input: 
     board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
